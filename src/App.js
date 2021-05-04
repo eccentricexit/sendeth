@@ -1,8 +1,7 @@
-import { Input, Button, Stack, Card, Flex, Alert, Text } from 'bumbag';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import { Input, Button, Stack, Card, Flex, Text } from 'bumbag';
+import React, { useCallback, useMemo, useState } from 'react';
 import { ethers } from 'ethers';
-import { useDebounce, useWallet } from './hooks';
-import { UnsupportedChainIdError } from '@web3-react/core';
+import { useWallet } from './hooks';
 
 const App = () => {
   const {
@@ -11,15 +10,7 @@ const App = () => {
     active,
     chainId,
     library,
-    error: walletError,
   } = useWallet();
-  const [error, setError] = useState<unknown>();
-  useEffect(() => {
-    if (walletError) setError(walletError);
-    if (!walletError && error && error instanceof UnsupportedChainIdError)
-      setError(undefined);
-  }, [error, walletError]);
-
   const signer = useMemo(() => library?.getSigner(), [library]);
 
   const [destinationAddress, setDestinationAddress] = useState('');
@@ -72,6 +63,7 @@ const App = () => {
             value={amount}
           />
           <Flex alignX="right">
+            {console.info(active, library, account)}
             {active && library && account ? (
               <Button palette="primary" onClick={onSend}>
                 Send
