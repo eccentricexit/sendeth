@@ -76,6 +76,7 @@ const App = () => {
           </Flex>
         </Stack>
       </Card>
+      Source: https://github.com/mtsalenc/sendeth
     </Flex>
   );
 };
