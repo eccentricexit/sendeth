@@ -24,7 +24,6 @@ const useWallet = () => {
   useInactiveListener(!triedEager || !!activatingConnector);
 
   const onConnectWallet = useCallback(() => {
-    console.info('activate')
     setActivatingConnector(injected);
     activate(injected);
   }, [activate]);
