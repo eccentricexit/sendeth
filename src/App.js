@@ -98,7 +98,7 @@ const App = () => {
       try {
         setFetchingTokenlist(true)
         const receivedTokenList = await (
-          await fetch('https://t2crtokens.eth.link')
+          await fetch('https://gateway.ipfs.io/ipns/tokens.uniswap.org')
         ).json()
         setTokenList([...receivedTokenList.tokens, ethToken])
       } catch (error) {
