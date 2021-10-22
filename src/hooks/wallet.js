@@ -1,8 +1,8 @@
-import { useWeb3React } from '@web3-react/core';
-import { useCallback, useEffect, useState } from 'react';
-import useEagerConnect from './eager-connect';
-import useInactiveListener from './inactive-listener';
-import { injected } from '../connectors';
+import { useWeb3React } from "@web3-react/core";
+import { useCallback, useEffect, useState } from "react";
+import useEagerConnect from "./eager-connect";
+import useInactiveListener from "./inactive-listener";
+import { injected } from "../connectors";
 
 // Requires web3-react in the context.
 const useWallet = () => {
