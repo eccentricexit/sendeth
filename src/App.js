@@ -249,7 +249,7 @@ const App = () => {
           </Flex>
         </Stack>
       </Card>
-      Source: https://github.com/mtsalenc/sendeth
+      Source: https://github.com/eccentricexit/sendeth
     </>
   )
 }
